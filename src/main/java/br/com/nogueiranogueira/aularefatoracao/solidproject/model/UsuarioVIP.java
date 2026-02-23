@@ -3,7 +3,7 @@ package br.com.nogueiranogueira.aularefatoracao.solidproject.model;
 import jakarta.persistence.DiscriminatorValue;
 
 @DiscriminatorValue("VIP")
-public class UsuarioVIP extends Usuario{
+public class UsuarioVIP extends Usuario implements Descontavel{
 
     private boolean temCartaoFidelidade;
 
@@ -17,9 +17,6 @@ public class UsuarioVIP extends Usuario{
 
     @Override
     public int getDesconto() {
-        if (!temCartaoFidelidade){
-            throw new IllegalStateException("Usuário VIP deve ter cartão fidelidade para receber desconto");
-        }
-        return 10; // desconto de 10% para usuários VIP
+        return 10;
     }
 }

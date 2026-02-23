@@ -55,7 +55,4 @@ public class Usuario {
         this.pontos = pontos;
     }
 
-    public int getDesconto() {
-        return 0; // desconto padrão para usuários comuns
-    }
 }
